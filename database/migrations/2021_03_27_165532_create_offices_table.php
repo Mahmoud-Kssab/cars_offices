@@ -12,8 +12,8 @@ class CreateOfficesTable extends Migration {
 			$table->timestamps();
 			$table->string('email', 255);
 			$table->string('name', 255);
-			$table->string('password', 255);
-			$table->string('phone', 255)->unique();
+			$table->string('phone', 255);
+			$table->string('address', 255);
 		});
 	}
 

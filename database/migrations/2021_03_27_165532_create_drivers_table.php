@@ -12,9 +12,8 @@ class CreateDriversTable extends Migration {
 			$table->timestamps();
 			$table->string('name', 255);
 			$table->string('phone', 255)->unique();
-			$table->integer('trip_id')->unsigned();
 			$table->integer('type_id');
-			$table->boolean('active')->nullable();
+			$table->boolean('activate')->default(0);
 			$table->integer('office_id');
 		});
 	}

@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard.index');
 });
+
+
+Route::get('/home','MainController@index')->name('admin.home');
+Route::group(['namespace' => 'Admin'], function (){
+    Route::group(['namespace' => 'Main'], function (){
+
+        Route::resource('/user','UserController');
+        Route::get('/activate{id}','UserController@activate')->name('user.activate');
+        Route::get('/deactivate{id}','UserController@deactivate')->name('user.deactivate');
+    });
+});

@@ -22,7 +22,6 @@ class User extends Authenticatable
         'phone',
         'active',
         'office_id',
-        'password',
     ];
 
     /**
@@ -44,7 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+
     public function trips()
     {
         return $this->hasMany('App\Models\Trip');
