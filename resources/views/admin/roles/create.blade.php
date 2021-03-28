@@ -39,7 +39,7 @@
                         data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
 
-                <form action="{{ route('governorate.destroy', 'test') }}" method="post">
+                <form action="{{ route('roles.destroy', 'test') }}" method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
                     <div class="modal-body">

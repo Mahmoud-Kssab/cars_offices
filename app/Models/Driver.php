@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Driver extends Model 
+class Driver extends Model
 {
 
     protected $table = 'drivers';
     public $timestamps = true;
-    protected $fillable = array('name', 'phone', 'type_id', 'active', 'office_id');
+    protected $fillable = array('name', 'phone', 'type_id', 'active', 'office_id', 'plate');
 
     public function tripe()
     {

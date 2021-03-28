@@ -33,7 +33,7 @@
                         data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
 
-                <form action="{{ route('governorate.destroy', 'test') }}" method="post">
+                <form action="{{ route('admin.destroy', 'test') }}" method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
                     <div class="modal-body">
@@ -86,9 +86,7 @@
                                     @if ($user->activate == '1')
                                               مفعل
                                     @else
-                                        <span class="label text-danger d-flex text-center">
-                                            <div class="dot-label bg-danger ml-1"></div>غير مفعل
-                                        </span>
+                                              غير مفعل
                                     @endif
                                 </td>
 

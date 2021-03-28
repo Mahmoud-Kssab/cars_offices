@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('page_title')
-أضافة مشرف
+أضافة موظف
 @endsection
 
 
@@ -11,12 +11,12 @@
 <section class="content-header">
     <h1>
         لوحة التحكم
-        <small>أضافة مستخدم</small>
+        <small>أضافة موظف</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> لوحة التحكم</a></li>
-        <li><a href="{{route('user.index')}}">  المستخدمين </a></li>
-        <li class="active">أضافة مستخدم</li>
+        <li><a href="{{route('user.index')}}">  الموظفين </a></li>
+        <li class="active">أضافة موظف</li>
     </ol>
 </section>
 
@@ -28,7 +28,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-                <h4 class="card-title mg-b-0"> أضافة مستخدم</h4>
+                <h4 class="card-title mg-b-0"> أضافة موظف</h4>
                 <i class="mdi mdi-dots-horizontal text-gray"></i>
             </div><!-- /.box-header -->
             <div class="box-body">
@@ -71,7 +71,7 @@
                                             <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>الاسم: <span class="tx-danger">*</span></label>
                                                 <input class="form-control form-control-sm mg-b-20"
-                                                    data-parsley-class-handler="#lnWrapper" name="name" required="" type="name">
+                                                    data-parsley-class-handler="#lnWrapper" name="name" required="" type="text">
                                             </div>
 
 
@@ -88,17 +88,17 @@
                                             <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>الهاتف: <span class="tx-danger">*</span></label>
                                                 <input class="form-control form-control-sm mg-b-20"
-                                                    data-parsley-class-handler="#lnWrapper" name="name" required="" type="name">
+                                                    data-parsley-class-handler="#lnWrapper" name="phone" required="" type="text">
                                             </div>
 
 
                                             <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0">
+
                                                 <label>المكتب: <span class="tx-danger">*</span></label>
-                                                <input class="form-control" name="email" required="" type="email" value="ex@ex.com">
+                                                {!! Form::select('office_id', $offices, $selectedID, ['class' => 'form-control']) !!}                                            </div>
                                             </div>
+
                                         </div>
-
-
                                     <div class="row mg-b-20">
                                         <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                             <label>كلمة المرور: <span class="tx-danger">*</span></label>
@@ -107,13 +107,13 @@
 
                                         <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                             <label> تاكيد كلمة المرور: <span class="tx-danger">*</span></label>
-                                            <input class="form-control" name="confirm-password" required="" type="password">
+                                            <input class="form-control" name="password_confirmation" required="" type="password">
                                         </div>
                                     </div>
 
                                     <div class="row row-sm mg-b-20">
                                         <div class="col-lg-6">
-                                            <label class="form-label">حالة المستخدم</label>
+                                            <label class="form-label">حالة الموظف</label>
                                             <select name="activate" id="select-beast" class="form-control  nice-select  custom-select">
                                                 <option value=1 >مفعل</option>
                                                 <option value=0>غير مفعل</option>

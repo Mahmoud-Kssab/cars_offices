@@ -158,7 +158,7 @@
 
 
 
-{{-- 
+
             <li class="header"> المشرفين</li>
             <li class="{{ active_menu('admin')[0] }} {{ active_menu('roles')[0] }} treeview">
               <a href="#">
@@ -169,7 +169,7 @@
                   <li class="{{ active_menu('roles')[0] }}">><a href="{{route('roles.index')}}"><i class="fa fa-user"></i>الصلاحيات</a></li>
 
               </ul>
-            </li> --}}
+            </li>
 
             <li class="header"> المستخدمين</li>
             <li class="{{ active_menu('user')[0] }} treeview">
@@ -177,9 +177,13 @@
                 <i class="fa fa-users"></i> <span>المستخدمين</span> <i class="fa fa-angle-left pull-left"></i>
               </a>
               <ul class="treeview-menu" style="{{ active_menu('user')[1] }}">
-                  <li class="{{ active_menu('user')[0] }}"><a href="{{route('user.index')}}"><i class="fa fa-user"></i>المستخدمين</a></li>
+                  <li class="{{ active_menu('user')[0] }}"><a href="{{route('user.index')}}"><i class="fa fa-user"></i>الموظفين</a></li>
               </ul>
             </li>
+
+
+            <li class="header"> المكاتب</li>
+            <li class=" {{ active_menu('office')[0] }} "><a href="{{route('office.index')}}"><i class="fa fa-user"></i>المكاتب</a></li>
 
 
 

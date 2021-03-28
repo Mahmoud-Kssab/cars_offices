@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('page_title')
-المستخدمين
+الموظفين
 @endsection
 
 @section('content')
@@ -8,11 +8,11 @@
     <section class="content-header">
         <h1>
             لوحة التحكم
-            <small>المستخدمين</small>
+            <small>الموظفين</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> لوحة التحكم</a></li>
-            <li class="active">المستخدمين</li>
+            <li class="active">الموظفين</li>
         </ol>
   </section>
 
@@ -33,7 +33,7 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <p>هل انت متاكد من عملية الحذف ؟</p><br>
-                    <input type="hidden" name="work_id" id="user_id" value="">
+                    <input type="hidden" name="user_id" id="user_id" value="">
                     <input class="form-control" name="username" id="username" type="text" readonly>
                 </div>
                 <div class="modal-footer">
@@ -50,8 +50,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">المستخدمين</h3>
-          <a class="btn btn-primary btn-sm" href="{{ route('user.create') }}">اضافة مستخجم</a>
+          <h3 class="box-title">الموظفين</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
             @include('flash::message')

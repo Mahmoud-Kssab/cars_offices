@@ -55,7 +55,16 @@ class UsersDataTable extends DataTable
             'dom'          => 'Blfrtip',
             'buttons'      => [
 
+                [
+                    'text'      => '<i class="fa fa-plus"> </i> أضافة موظف جديد'  ,
+                    'className' => 'btn btn-info',
+                    'action'    => "function(){
 
+                        window.location.href = '" . \URL::current() . "/create ';
+
+                    }"
+
+                ],
                 [ 'extend' => 'reload', 'className' => 'btn btn-primary' , 'text' => '<i class="fa fa-retweet">' ],
 
 
@@ -126,6 +135,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'User_' . date('YmdHis');
+        return 'Users_' . date('YmdHis');
     }
 }

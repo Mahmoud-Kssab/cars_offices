@@ -18,12 +18,37 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home','MainController@index')->name('admin.home');
-Route::group(['namespace' => 'Admin'], function (){
+Route::group([ 'namespace' => 'Admin', 'prefix'=>'admin'], function (){
     Route::group(['namespace' => 'Main'], function (){
 
+        //////////// Admin Module /////////////
+        Route::resource('admin','AdminController');
+        Route::resource('roles','RoleController');
+
+        Route::get('/home','MainController@index')->name('admin.home');
+
+
+
+        //////////// User Module /////////////
         Route::resource('/user','UserController');
         Route::get('/activate{id}','UserController@activate')->name('user.activate');
         Route::get('/deactivate{id}','UserController@deactivate')->name('user.deactivate');
+
+
+        //////////// Office Module /////////////
+        Route::resource('/office','OfficeController');
+        // Route::get('/activate{id}','UserController@activate')->name('user.activate');
+        // Route::get('/deactivate{id}','UserController@deactivate')->name('user.deactivate');
+
+
+
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
